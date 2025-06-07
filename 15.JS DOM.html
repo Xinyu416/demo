@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 属性</title>
+</head>
+
+<body>
+    <div id="box1">DOM 属性Box1显示</div>
+    <div class="box2">这是box2显  示内容</div>
+    <div>普通div显示内容</div>
+
+    <button>测试按钮</button>
+
+    <script>
+        let element_id = document.getElementById('box1');
+        console.log(element_id);
+
+        let element_class = document.getElementsByClassName('box2')[0];
+        console.log(element_class);
+
+        var element_tag = document.getElementsByTagName('div')[2];
+        console.log(element_tag);
+
+        element_id.innerHTML = '你好，修改文本内容';
+        element_id.style.color = 'blue';
+        element_id.style.fontSize = '25px';
+
+        element_id.innerText = '<a href="#">测试链接</a>'
+        element_class.innerHTML = '<a href="#">测试链接</a>';
+
+        var element_button = document.getElementsByTagName('button')[0];
+
+        // element_button.onclick = function(){
+        //     alert('DOM 属性按键触发');}
+        
+        element_button.addEventListener('click', function () { 
+            alert('通过add EventListener 触发按键') });
+    </script>
+
+</body>
+
+</html>
